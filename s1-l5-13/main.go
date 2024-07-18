@@ -1,15 +1,16 @@
+//+= a // тоже самое, что и a = a + a
+//a -= a // тоже самое, что и a = a - a
+//a /= a // тоже самое, что и a = a / a
+//a *= a // тоже самое, что и a = a * a
+
 package main
 
 import "fmt"
 
 func main() {
-
-	var a, b, c int
+	var a int
 	fmt.Scan(&a)
-	fmt.Scan(&b)
 
 	a *= a
-	b *= b
-	c = a + b
-	fmt.Println(c)
+	fmt.Println(a)
 }
