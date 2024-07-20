@@ -5,18 +5,22 @@ import (
 )
 
 func main() {
-	var n int
-	fmt.Scan(&n)
+	var num, maxNum, count int
 
-	sum := 0
-	for i := 0; i < n; i++ {
-		var num int
+	for {
 		fmt.Scan(&num)
 
-		if (num >= 10 && num <= 99) && num%8 == 0 {
-			sum += num
+		if num == 0 {
+			break
+		}
+
+		if num > maxNum {
+			maxNum = num
+			count = 1
+		} else if num == maxNum {
+			count++
 		}
 	}
 
-	fmt.Println(sum)
+	fmt.Println(count)
 }
