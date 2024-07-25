@@ -5,14 +5,18 @@ import (
 )
 
 func main() {
-	var seconds int
-	fmt.Scan(&seconds)
+	var num int
+	fmt.Scan(&num)
 
-	secondsInHours := 3600
-	minutesInHours := 60
+	if num < 100 || num > 999 || num%10 == 0 {
+		return
+	}
 
-	hours := seconds / secondsInHours
-	minutes := (seconds % secondsInHours) / minutesInHours
+	hundreds := num / 100
+	tens := (num / 10) % 10
+	units := num % 10
 
-	fmt.Printf("It is %d hours %d minutes.", hours, minutes)
+	reversed := (units * 100) + (tens * 10) + hundreds
+
+	fmt.Println(reversed)
 }
