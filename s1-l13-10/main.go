@@ -5,19 +5,23 @@ import (
 )
 
 func main() {
-	var N int
-	fmt.Scan(&N)
+	var a, b int
+	fmt.Scan(&a, &b)
 
-	for i := 0; i < N; i++ {
-		sum := 0
+	found := false
+	maxMultiple := 0
 
-		for N > 0 {
-			sum += N % 10
-			N /= 10
+	for i := b; i >= a; i-- {
+		if i%7 == 0 {
+			maxMultiple = i
+			found = true
+			break
 		}
-
-		N = sum
 	}
 
-	fmt.Println(N)
+	if found {
+		fmt.Println(maxMultiple)
+	} else {
+		fmt.Println("NO")
+	}
 }
